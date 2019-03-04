@@ -1,0 +1,78 @@
+# Project: tpfinalc
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o paciente.o utils.o dieta.o dieta_paciente.o orm.o plato.o ingrediente.o plato_ingrediente.o plato_paciente.o paciente_control.o profesional.o paciente_profesional.o plato_dieta.o implementaciones.o argumentos.o altas.o $(RES)
+LINKOBJ  = main.o utils.o implementaciones.o argumentos.o altas.o $(RES)
+LIBS =  -L"lib" "../../../../../../../Archivos de programa/PostgreSQL/9.1/lib/libpq.lib"  -g3 
+INCS =  -I"include"  -I"C:/Archivos de programa/PostgreSQL/9.1/include" 
+CXXINCS =  -I"lib/gcc/mingw32/3.4.2/include"  -I"include/c++/3.4.2/backward"  -I"include/c++/3.4.2/mingw32"  -I"include/c++/3.4.2"  -I"include"  -I"C:/Archivos de programa/PostgreSQL/9.1/include" 
+BIN  = tpfinalc.exe
+CXXFLAGS = $(CXXINCS)   -g3
+CFLAGS = $(INCS)   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before tpfinalc.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "tpfinalc.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+paciente.o: paciente.c
+	$(CC) -c paciente.c -o paciente.o $(CFLAGS)
+
+utils.o: utils.c
+	$(CC) -c utils.c -o utils.o $(CFLAGS)
+
+dieta.o: dieta.c
+	$(CC) -c dieta.c -o dieta.o $(CFLAGS)
+
+dieta_paciente.o: dieta_paciente.c
+	$(CC) -c dieta_paciente.c -o dieta_paciente.o $(CFLAGS)
+
+orm.o: orm.c
+	$(CC) -c orm.c -o orm.o $(CFLAGS)
+
+plato.o: plato.c
+	$(CC) -c plato.c -o plato.o $(CFLAGS)
+
+ingrediente.o: ingrediente.c
+	$(CC) -c ingrediente.c -o ingrediente.o $(CFLAGS)
+
+plato_ingrediente.o: plato_ingrediente.c
+	$(CC) -c plato_ingrediente.c -o plato_ingrediente.o $(CFLAGS)
+
+plato_paciente.o: plato_paciente.c
+	$(CC) -c plato_paciente.c -o plato_paciente.o $(CFLAGS)
+
+paciente_control.o: paciente_control.c
+	$(CC) -c paciente_control.c -o paciente_control.o $(CFLAGS)
+
+profesional.o: profesional.c
+	$(CC) -c profesional.c -o profesional.o $(CFLAGS)
+
+paciente_profesional.o: paciente_profesional.c
+	$(CC) -c paciente_profesional.c -o paciente_profesional.o $(CFLAGS)
+
+plato_dieta.o: plato_dieta.c
+	$(CC) -c plato_dieta.c -o plato_dieta.o $(CFLAGS)
+
+implementaciones.o: implementaciones.c
+	$(CC) -c implementaciones.c -o implementaciones.o $(CFLAGS)
+
+argumentos.o: argumentos.c
+	$(CC) -c argumentos.c -o argumentos.o $(CFLAGS)
+
+altas.o: altas.c
+	$(CC) -c altas.c -o altas.o $(CFLAGS)
